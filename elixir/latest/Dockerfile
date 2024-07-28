@@ -1,9 +1,10 @@
 FROM --platform=$TARGETOS/$TARGETARCH elixir:slim
 
-LABEL author="MrAvox" maintainer="mravox@proton.me"
+LABEL author="Tallo" maintainer="tallo@tallostudios.com"
 
 RUN  apt update \
             && apt -y install git dnsutils curl iproute2 ffmpeg tini \
+     		&& apt install build-essential erlang-dev gcc make \
             && useradd -m -d /home/container container
 
 USER container
