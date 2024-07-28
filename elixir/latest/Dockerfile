@@ -4,7 +4,7 @@ LABEL author="Tallo" maintainer="tallo@tallostudios.com"
 
 RUN  apt update \
             && apt -y install git dnsutils curl iproute2 ffmpeg tini \
-     		&& apt install build-essential erlang-dev gcc make \
+     		&& apt -y install build-essential erlang-dev gcc make --no-install-recommends \
             && useradd -m -d /home/container container
 
 USER container
